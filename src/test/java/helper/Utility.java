@@ -30,8 +30,7 @@ public class Utility {
 
     }
 
-    public static void quitDriver() throws InterruptedException {
-        Thread.sleep(4000);
+    public static void quitDriver() {
         driver.quit();
     }
 

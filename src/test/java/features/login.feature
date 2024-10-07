@@ -21,17 +21,8 @@ Feature: User Login
       | "standard_user"   | "password"     | "Epic sadface: Username and password do not match any user in this service" |
       | "username"        | "secret_sauce" | "Epic sadface: Username and password do not match any user in this service" |
 
-
-
-  Scenario: Unsuccessful login with invalid password
-    Given I am on the SauceDemo login page
-    When I enter "standard_user" as username
-    And I enter "wrong_password" as password
-    And I click on the login button
-    Then I should see an error message "Username and password do not match any user in this service"
-
-  Scenario: Login page elements are visible
-    Given I am on the SauceDemo login page
-    Then I should see the username input field
-    And I should see the password input field
-    And I should see the login button
+  Scenario: Successful logout after login
+    Given User successfully logged in to the SauceDemo application
+    When User click on the menu burger button
+    And User click the logout button
+    Then User should be redirected to the login page
