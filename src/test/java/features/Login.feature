@@ -23,15 +23,15 @@ Feature: User Login
 
 
 
-#  Scenario: Unsuccessful login with invalid password
-#    Given I am on the SauceDemo login page
-#    When I enter "standard_user" as username
-#    And I enter "wrong_password" as password
-#    And I click on the login button
-#    Then I should see an error message "Username and password do not match any user in this service"
-#
-#  Scenario: Login page elements are visible
-#    Given I am on the SauceDemo login page
-#    Then I should see the username input field
-#    And I should see the password input field
-#    And I should see the login button
+  Scenario: Unsuccessful login with invalid password
+    Given I am on the SauceDemo login page
+    When I enter "standard_user" as username
+    And I enter "wrong_password" as password
+    And I click on the login button
+    Then I should see an error message "Username and password do not match any user in this service"
+
+  Scenario: Login page elements are visible
+    Given I am on the SauceDemo login page
+    Then I should see the username input field
+    And I should see the password input field
+    And I should see the login button
