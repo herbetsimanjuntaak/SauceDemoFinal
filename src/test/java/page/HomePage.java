@@ -10,7 +10,7 @@ public class HomePage {
 
     By products = By.xpath("(//*[text () = 'Products'])");
     By title = By.xpath("//div[@class='app_logo']");
-//div[contains(text(),'"+product+"')]
+
 
     public void verifyOnHome() {
         explicitWaitPresence(products);
