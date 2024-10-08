@@ -3,6 +3,7 @@ package page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -54,6 +55,15 @@ public class ProductPage {
         // Mengklik tombol "Remove"
         removeButton.click();
     }
+
+    public void iSelectTheSortingOption(String sortingOption) throws InterruptedException {
+        WebElement sortDropdown = driver.findElement(By.className("product_sort_container"));
+        Select select = new Select(sortDropdown);
+        select.selectByVisibleText(sortingOption);
+        Thread.sleep(2000);
+    }
+
+
 
 
 }

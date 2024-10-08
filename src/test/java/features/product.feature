@@ -55,3 +55,18 @@ Feature: Product Interaction in SauceDemo Inventory
     And the cart badge should show "2"
     When User remove product added "Sauce Labs Bike Light"
     And the cart badge should show "1"
+
+
+  Scenario Outline: Sort products by Sorting Type
+    Given User successfully logged in to the SauceDemo application
+    When User select the <SortingOption> sorting option
+    Then the products should be displayed in <OrderDescription> order
+
+    Examples:
+      | SortingOption         | OrderDescription                |
+      | "Name (A to Z)"       | "alphabetical (A to Z)"         |
+      | "Name (Z to A)"       | "reverse alphabetical (Z to A)" |
+      | "Price (low to high)" | "ascending (low to high)"       |
+      | "Price (high to low)" | "descending (high to low)"      |
+
+

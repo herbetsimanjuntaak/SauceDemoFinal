@@ -9,13 +9,9 @@ import page.LoginPage;
 
 public class LoginStep {
 
-    LoginPage loginPage;
-    HomePage homePage;
+    LoginPage loginPage = new LoginPage();
+    HomePage homePage = new HomePage();
 
-    public LoginStep() {
-        this.loginPage = new LoginPage();
-        this.homePage = new HomePage();
-    }
 
     @Given("User on the SauceDemo login page")
     public void userOnTheSauceDemoLoginPage() {
