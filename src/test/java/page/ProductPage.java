@@ -50,7 +50,8 @@ public class ProductPage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='" + productName + "']")));
 
         // Menggunakan XPath untuk menemukan tombol "Remove"
-        WebElement removeButton = driver.findElement(By.xpath("//div[text()='" + productName + "']//parent::a//ancestor::div[@class='cart_item']//button[contains(@id, 'remove')]"));
+//        WebElement removeButton = driver.findElement(By.xpath("//div[text()='" + productName + "']/ancestor::div[@class='cart_item']//button[contains(@id, 'remove')]"));
+        WebElement removeButton = driver.findElement(By.xpath("//div[@class='cart_item']//div[contains(text(), 'Sauce Labs Bike Light')]//following-sibling::button[contains(@id, 'remove')]"));
 
         // Mengklik tombol "Remove"
         removeButton.click();

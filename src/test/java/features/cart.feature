@@ -20,8 +20,8 @@ Feature: Cart functionality on Sauce Demo website
     Then User should see only <productName> in the cart
     And the cart badge should show <expectedCount> items
     Examples:
-      | productName               | productName2                        | productRemove             | expectedCount |
-      | "Sauce Labs Backpack"     | "Sauce Labs Bike Light"             | "Sauce Labs Bike Light"   | "1"           |
-      | "Sauce Labs Bolt T-Shirt" | "Sauce Labs Fleece Jacket"          | "Sauce Labs Bolt T-Shirt" | "1"           |
-      | "Sauce Labs Onesie"       | "Test.allTheThings() T-Shirt (Red)" | "Sauce Labs Onesie"       | "1"           |
+      | productName                | productName2                        | productRemove                       | expectedCount |
+      | "Sauce Labs Backpack"      | "Sauce Labs Bike Light"             | "Sauce Labs Bike Light"             | "1"           |
+      | "Sauce Labs Fleece Jacket" | "Sauce Labs Onesie"                 | "Sauce Labs Onesie"                 | "1"           |
+      | "Sauce Labs Onesie"        | "Test.allTheThings() T-Shirt (Red)" | "Test.allTheThings() T-Shirt (Red)" | "1"           |
 
