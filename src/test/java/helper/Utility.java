@@ -22,7 +22,7 @@ public class Utility {
         options.addArguments("--remote-allow-origins=*");
 
         //untuk tidak menampilkan browser
-//        options.addArguments("--headless");
+        options.addArguments("--headless");
 
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();

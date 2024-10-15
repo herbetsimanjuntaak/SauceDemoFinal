@@ -49,9 +49,8 @@ public class ProductPage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='" + productName + "']")));
 
-        // Menggunakan XPath untuk menemukan tombol "Remove"
-//        WebElement removeButton = driver.findElement(By.xpath("//div[text()='" + productName + "']/ancestor::div[@class='cart_item']//button[contains(@id, 'remove')]"));
-        WebElement removeButton = driver.findElement(By.xpath("//div[@class='cart_item']//div[contains(text(), 'Sauce Labs Bike Light')]//following-sibling::button[contains(@id, 'remove')]"));
+        WebElement removeButton = driver.findElement(By.xpath("//button[text()='Remove' and contains(@class, 'btn_secondary')]"));
+
 
         // Mengklik tombol "Remove"
         removeButton.click();
@@ -63,8 +62,6 @@ public class ProductPage {
         select.selectByVisibleText(sortingOption);
         Thread.sleep(2000);
     }
-
-
 
 
 }
