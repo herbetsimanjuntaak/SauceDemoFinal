@@ -37,7 +37,10 @@ configurations {
     }
 }
 
-tasks.register('webTest') {
+def tags = (findProperty('tags') == null) ? 'not @exclude' : findProperty('tags') + ' and not @exclude'
+
+// ./gradlew SauceDemo
+tasks.register('SauceDemo') {
     description("Running Sauce Demo Cucumber Test")
     dependsOn assemble, testClasses
     doLast {

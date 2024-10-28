@@ -9,13 +9,9 @@ import page.LoginPage;
 
 public class LoginStep {
 
-    LoginPage loginPage;
-    HomePage homePage;
+    LoginPage loginPage = new LoginPage();
+    HomePage homePage = new HomePage();
 
-    public LoginStep() {
-        this.loginPage = new LoginPage();
-        this.homePage = new HomePage();
-    }
 
     @Given("User on the SauceDemo login page")
     public void userOnTheSauceDemoLoginPage() {
@@ -44,5 +40,30 @@ public class LoginStep {
 
     @Then("User should see an error message {string}")
     public void userShouldSeeAnErrorMessage(String errorMessage) {
+        loginPage.validateError(errorMessage);
+    }
+
+    @Given("User successfully logged in to the SauceDemo application")
+    public void userSuccessfullyLoggedInToTheSauceDemoApplication() {
+        loginPage.sauceDemoLogin();
+        loginPage.setInputUsername("standard_user");
+        loginPage.setInputPassword("secret_sauce");
+        loginPage.clickButtonLogin();
+        homePage.verifyOnHome();
+    }
+
+    @When("User click on the menu burger button")
+    public void userClickOnTheMenuBurgerButton() {
+        loginPage.clickButtonBurger();
+    }
+
+    @And("User click the logout button")
+    public void userClickTheLogoutButton() {
+        loginPage.clickButtonLogout();
+    }
+
+    @Then("User should be redirected to the login page")
+    public void userShouldBeRedirectedToTheLoginPage() {
+        loginPage.sauceDemoLogin();
     }
 }
