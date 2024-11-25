@@ -47,7 +47,7 @@ Feature: Product Interaction in SauceDemo Inventory
       | productName             | expectedCount |
       | "Sauce Labs Backpack"   | "1"           |
       | "Sauce Labs Bike Light" | "1"           |
-
+#scrip bergantung pada product list
   Scenario: Remove product
     Given User successfully logged in to the SauceDemo application
     And User add the "Sauce Labs Backpack" to my cart

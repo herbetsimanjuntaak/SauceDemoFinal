@@ -12,6 +12,8 @@ import java.util.Collections;
 import java.util.List;
 
 import static helper.Utility.driver;
+import static java.util.Collections.reverseOrder;
+import static java.util.Collections.sort;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
@@ -67,7 +69,7 @@ public class ProductStep {
 
     @Then("the products should be displayed in {string} order")
     public void theProductsShouldBeDisplayedInOrder(String orderDescription) {
-        if (orderDescription.contains("alphabetical")) {
+        if (orderDescription.contains("A to Z")) {
             validateProductNamesOrder(orderDescription);
         } else if (orderDescription.contains("ascending") || orderDescription.contains("descending")) {
             validateProductPricesOrder(orderDescription);
@@ -84,9 +86,9 @@ public class ProductStep {
 
         List<String> sortedProductNames = new ArrayList<>(actualProductNames);
         if (orderDescription.contains("reverse")) {
-            sortedProductNames.sort(Collections.reverseOrder()); // Sort Z to A
+            sortedProductNames.sort(reverseOrder()); // Sort Z to A
         } else {
-            Collections.sort(sortedProductNames); // Sort A to Z
+            sort(sortedProductNames); // Sort A to Z
         }
 
         assertEquals(actualProductNames, sortedProductNames);
@@ -101,9 +103,9 @@ public class ProductStep {
 
         List<Double> sortedPrices = new ArrayList<>(actualPrices);
         if (orderDescription.contains("descending")) {
-            sortedPrices.sort(Collections.reverseOrder()); // Sort high to low
+            sortedPrices.sort(reverseOrder()); // Sort high to low
         } else {
-            Collections.sort(sortedPrices); // Sort low to high
+            sort(sortedPrices); // Sort low to high
         }
 
         assertEquals(actualPrices, sortedPrices);
